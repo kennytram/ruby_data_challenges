@@ -25,7 +25,7 @@ File.open(w_file, 'r') do |file|
         list.insert(col_num, "NULL")
     end
 
-    def santitize_w_data(list, hdday_col_num, hrp_col_num, wxtype_col_num)
+    def sanitize_w_data(list, hdday_col_num, hrp_col_num, wxtype_col_num)
         if list[hdday_col_num].include?('.') && list[hdday_col_num] != "NULL"
             add_null_value(list, hdday_col_num)
         end
@@ -41,7 +41,7 @@ File.open(w_file, 'r') do |file|
         data[col_num].tr('^0-9.', '')
     end
 
-    def santitize_cols(data, max_temp_col, min_temp_col, mxs_col_num)
+    def sanitize_cols(data, max_temp_col, min_temp_col, mxs_col_num)
         remove_non_numeric_chars(data, max_temp_col)
         remove_non_numeric_chars(data, min_temp_col)
         remove_non_numeric_chars(data, mxs_col_num)
